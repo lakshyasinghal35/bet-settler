@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.betsettler.api.dto.BetResponse;
 import com.betsettler.api.dto.CreateBetRequest;
-import com.betsettler.domain.model.Bet;
 import com.betsettler.domain.service.BetService;
 
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
 
 @RestController
 @RequestMapping("/api/v1/bets")
@@ -29,9 +29,10 @@ public class BetController {
 	}
 
 	@PostMapping
-	public ResponseEntity<String> createBet(@Valid @RequestBody CreateBetRequest request) {
-		Bet saved = betService.createBet(new Bet(request));
-		return ResponseEntity.status(HttpStatus.CREATED).body("Created bet with ID: " + saved.getBetId());
+	public ResponseEntity<List<BetResponse>> createBets(
+			@Valid @NotEmpty @RequestBody List<@Valid CreateBetRequest> requests) {
+		List<BetResponse> created = betService.createBets(requests);
+		return ResponseEntity.status(HttpStatus.CREATED).body(created);
 	}
 
 	@GetMapping

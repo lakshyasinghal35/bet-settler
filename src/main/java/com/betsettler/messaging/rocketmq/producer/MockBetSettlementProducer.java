@@ -1,11 +1,11 @@
 package com.betsettler.messaging.rocketmq.producer;
 
+import com.betsettler.domain.model.Bet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.betsettler.domain.model.BetSettlement;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -25,13 +25,13 @@ public class MockBetSettlementProducer implements BetSettlementProducer {
 	}
 
 	@Override
-	public void send(BetSettlement settlement) {
+	public void send(Bet bet) {
 		try {
-			String payload = objectMapper.writeValueAsString(settlement);
+			String payload = objectMapper.writeValueAsString(bet);
 			log.info("Mock RocketMQ publish topic={} payload={}", betSettlementsTopic, payload);
 		}
 		catch (JsonProcessingException ex) {
-			log.error("Failed to serialize bet settlement betId={}", settlement.getBetId(), ex);
+			log.error("Failed to serialize bet settlement betId={}", bet.getBetId(), ex);
 		}
 	}
 

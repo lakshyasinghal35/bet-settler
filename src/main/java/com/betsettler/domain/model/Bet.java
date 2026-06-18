@@ -1,7 +1,6 @@
 package com.betsettler.domain.model;
 
 import java.math.BigDecimal;
-import java.time.Instant;
 
 import com.betsettler.api.dto.CreateBetRequest;
 import lombok.AllArgsConstructor;
@@ -21,9 +20,7 @@ public class Bet {
 	private String eventMarketId;
 	private String eventWinnerId;
 	private BigDecimal betAmount;
-	private BigDecimal odds;
-	private BetStatus status;
-	private Instant settledAt;
+	private BetResult result;
 
 	public Bet(CreateBetRequest req) {
 		betId = req.getBetId();
@@ -32,8 +29,7 @@ public class Bet {
 		eventMarketId = req.getEventMarketId();
 		eventWinnerId = req.getEventWinnerId();
 		betAmount = req.getBetAmount();
-		odds = req.getOdds();
-		this.status = BetStatus.OPEN;
-		this.settledAt = null;
+		this.result = null;
 	}
+
 }

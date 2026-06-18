@@ -1,10 +1,9 @@
 package com.betsettler.api.dto;
 
 import java.math.BigDecimal;
-import java.time.Instant;
 
 import com.betsettler.domain.model.Bet;
-import com.betsettler.domain.model.BetStatus;
+import com.betsettler.domain.model.BetResult;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -19,9 +18,7 @@ public class BetResponse {
 	private String eventMarketId;
 	private String eventWinnerId;
 	private BigDecimal betAmount;
-	private BigDecimal odds;
-	private BetStatus status;
-	private Instant settledAt;
+	private BetResult result;
 
 	public BetResponse(Bet bet) {
 		betId = bet.getBetId();
@@ -30,9 +27,7 @@ public class BetResponse {
 		eventMarketId = bet.getEventMarketId();
 		eventWinnerId = bet.getEventWinnerId();
 		betAmount = bet.getBetAmount();
-		odds = bet.getOdds();
-		status = bet.getStatus();
-		settledAt = bet.getSettledAt();
+		result = bet.getResult();
 	}
 
 }

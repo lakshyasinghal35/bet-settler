@@ -1,6 +1,5 @@
 package com.betsettler.repository;
 
-import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,7 +12,5 @@ public interface BetRepository {
 	Optional<Bet> findById(String betId);
 
 	List<Bet> findByEventId(String eventId);
-
-	boolean markSettledIfOpen(String betId, Instant settledAt);
 
 }

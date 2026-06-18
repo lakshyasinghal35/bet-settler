@@ -1,6 +1,6 @@
 package com.betsettler.domain.model;
 
-public enum SettlementStatus {
+public enum BetResult {
 	WON,
 	LOST
 }

@@ -31,8 +31,4 @@ public class CreateBetRequest {
 	@Positive
 	private BigDecimal betAmount;
 
-	@NotNull
-	@Positive
-	private BigDecimal odds;
-
 }

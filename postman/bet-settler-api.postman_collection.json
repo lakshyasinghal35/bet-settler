@@ -2,7 +2,7 @@
   "info": {
     "_postman_id": "bet-settler-api",
     "name": "Bet Settler API",
-    "description": "REST API for bet-settler — create bets, query bets by event, and publish event outcomes to Kafka.",
+    "description": "REST API for bet-settler — create bets (batch), query bets by event, and publish event outcomes to Kafka.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
@@ -22,7 +22,7 @@
       "name": "Bets",
       "item": [
         {
-          "name": "Create Bet",
+          "name": "Create Bets",
           "request": {
             "method": "POST",
             "header": [
@@ -33,7 +33,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"betId\": \"bet-004\",\n  \"userId\": \"user-4\",\n  \"eventId\": \"evt-123\",\n  \"eventMarketId\": \"market-winner\",\n  \"eventWinnerId\": \"team-a\",\n  \"betAmount\": 75.00,\n  \"odds\": 2.10\n}",
+              "raw": "[\n  {\n    \"betId\": \"bet-001\",\n    \"userId\": \"user-1\",\n    \"eventId\": \"{{eventId}}\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-a\",\n    \"betAmount\": 100.00\n  },\n  {\n    \"betId\": \"bet-002\",\n    \"userId\": \"user-2\",\n    \"eventId\": \"{{eventId}}\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-b\",\n    \"betAmount\": 50.00\n  }\n]",
               "options": {
                 "raw": {
                   "language": "json"
@@ -51,7 +51,7 @@
                 "bets"
               ]
             },
-            "description": "Creates a new bet. Returns 201 Created with the new bet ID."
+            "description": "Creates one or more bets. Request body must be a JSON array of bet objects.\n\nResponses:\n- 201 Created — all bets saved; body is the created bets\n- 207 Multi-Status — some bets saved; body contains only successful bets\n- 400 Bad Request — no bets saved, or empty array\n\nDuplicate betId values overwrite existing bets in Redis."
           },
           "response": []
         },
