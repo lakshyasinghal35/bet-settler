@@ -38,7 +38,6 @@ class EventOutcomeKafkaConsumerTest {
 	static void configureProperties(DynamicPropertyRegistry registry) {
 		registry.add("spring.data.redis.host", redisContainer::getHost);
 		registry.add("spring.data.redis.port", () -> redisContainer.getMappedPort(6379));
-		registry.add("app.seed.enabled", () -> false);
 	}
 
 	@Test

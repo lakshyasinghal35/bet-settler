@@ -88,12 +88,6 @@ public class RedisBetRepository implements BetRepository {
 		return Boolean.TRUE.equals(updated);
 	}
 
-	@Override
-	public boolean hasAnyBets() {
-		Set<String> keys = redisTemplate.keys(BET_KEY_PREFIX + "*");
-		return keys != null && !keys.isEmpty();
-	}
-
 	private String betKey(String betId) {
 		return BET_KEY_PREFIX + betId;
 	}

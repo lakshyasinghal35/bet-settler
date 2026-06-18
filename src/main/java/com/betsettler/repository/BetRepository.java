@@ -16,6 +16,4 @@ public interface BetRepository {
 
 	boolean markSettledIfOpen(String betId, Instant settledAt);
 
-	boolean hasAnyBets();
-
 }

@@ -1,0 +1,127 @@
+{
+  "info": {
+    "_postman_id": "bet-settler-api",
+    "name": "Bet Settler API",
+    "description": "REST API for bet-settler — create bets, query bets by event, and publish event outcomes to Kafka.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "eventId",
+      "value": "evt-123",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Bets",
+      "item": [
+        {
+          "name": "Create Bet",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"betId\": \"bet-004\",\n  \"userId\": \"user-4\",\n  \"eventId\": \"evt-123\",\n  \"eventMarketId\": \"market-winner\",\n  \"eventWinnerId\": \"team-a\",\n  \"betAmount\": 75.00,\n  \"odds\": 2.10\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bets",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bets"
+              ]
+            },
+            "description": "Creates a new bet. Returns 201 Created with the new bet ID."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Bets by Event ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bets?eventId={{eventId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bets"
+              ],
+              "query": [
+                {
+                  "key": "eventId",
+                  "value": "{{eventId}}",
+                  "description": "Required. Event ID to filter bets."
+                }
+              ]
+            },
+            "description": "Returns all bets for the given event ID. Returns 200 OK with a JSON array of bets."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Event Outcomes",
+      "item": [
+        {
+          "name": "Publish Event Outcome",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"eventId\": \"evt-123\",\n  \"eventName\": \"Team A vs Team B\",\n  \"eventWinnerId\": \"team-a\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/event-outcomes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "event-outcomes"
+              ]
+            },
+            "description": "Publishes an event outcome to Kafka for downstream bet settlement. Returns 202 Accepted."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
