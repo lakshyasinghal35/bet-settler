@@ -1,0 +1,29 @@
+[
+  {
+    "betId": "bet-001",
+    "userId": "user-1",
+    "eventId": "evt-123",
+    "eventMarketId": "market-winner",
+    "eventWinnerId": "team-a",
+    "betAmount": 100.00,
+    "odds": 2.50
+  },
+  {
+    "betId": "bet-002",
+    "userId": "user-2",
+    "eventId": "evt-123",
+    "eventMarketId": "market-winner",
+    "eventWinnerId": "team-b",
+    "betAmount": 50.00,
+    "odds": 3.00
+  },
+  {
+    "betId": "bet-003",
+    "userId": "user-3",
+    "eventId": "evt-456",
+    "eventMarketId": "market-winner",
+    "eventWinnerId": "team-x",
+    "betAmount": 25.00,
+    "odds": 1.80
+  }
+]
