@@ -26,6 +26,7 @@ public class EventOutcomeProcessingService {
 	}
 
 	public void process(EventOutcome outcome) {
+		log.info("Processing bets for eventId={}", outcome.getEventId());
 		List<Bet> bets = betRepository.findByEventId(outcome.getEventId());
 		if (bets.isEmpty()) {
 			log.info("No bets found for eventId={}", outcome.getEventId());

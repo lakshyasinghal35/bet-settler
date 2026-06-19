@@ -29,6 +29,7 @@ public class BetService {
 	}
 
 	public List<BetResponse> createBets(List<CreateBetRequest> requests) {
+		log.info("Creating bets for {} requests", requests.size());
 		List<BetResponse> created = new ArrayList<>();
 		for (CreateBetRequest request : requests) {
 			try {
