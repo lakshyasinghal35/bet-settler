@@ -47,7 +47,7 @@ cd bet-settler
 The repo may contain a hardcoded IP (e.g. `192.168.1.9`) from a previous machine. Replace it with an address this machine can use to reach the Docker-hosted Kafka and Redis services.
 
 **`src/main/resources/application.properties`**
-
+(Can skip if running the jar on the same machine hosting Kafka/Redis)
 ```properties
 spring.kafka.bootstrap-servers=<your-ip-address>:9092
 spring.data.redis.host=<your-ip-address>
