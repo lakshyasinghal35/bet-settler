@@ -2,8 +2,8 @@ package com.betsettler.dto;
 
 import java.math.BigDecimal;
 
-import com.betsettler.domain.model.Bet;
-import com.betsettler.domain.model.BetResult;
+import com.betsettler.model.Bet;
+import com.betsettler.model.BetResult;
 
 import lombok.Getter;
 import lombok.Setter;

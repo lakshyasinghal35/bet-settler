@@ -10,8 +10,8 @@ import java.util.Set;
 
 import org.springframework.stereotype.Repository;
 
-import com.betsettler.domain.model.Bet;
-import com.betsettler.domain.model.BetResult;
+import com.betsettler.model.Bet;
+import com.betsettler.model.BetResult;
 import com.betsettler.redis.service.RedisDBService;
 
 @Repository

@@ -10,7 +10,7 @@ import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
 
-import com.betsettler.domain.model.EventOutcome;
+import com.betsettler.model.EventOutcome;
 
 @Configuration
 public class KafkaConsumerConfig {

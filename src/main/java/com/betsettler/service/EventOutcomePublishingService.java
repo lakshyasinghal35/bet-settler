@@ -1,11 +1,11 @@
-package com.betsettler.domain.service;
+package com.betsettler.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import com.betsettler.domain.model.EventOutcome;
+import com.betsettler.model.EventOutcome;
 import com.betsettler.messaging.kafka.producer.KafkaMessageProducer;
 
 @Service

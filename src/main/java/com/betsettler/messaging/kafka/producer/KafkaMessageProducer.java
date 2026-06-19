@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
-import com.betsettler.domain.model.EventOutcome;
+import com.betsettler.model.EventOutcome;
 
 @Component
 public class KafkaMessageProducer {

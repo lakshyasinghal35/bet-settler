@@ -1,4 +1,4 @@
-package com.betsettler.domain.model;
+package com.betsettler.model;
 
 public enum BetResult {
 	WON,

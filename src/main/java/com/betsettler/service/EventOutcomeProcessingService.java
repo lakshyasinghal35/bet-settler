@@ -1,15 +1,15 @@
-package com.betsettler.domain.service;
+package com.betsettler.service;
 
 import java.util.List;
 
-import com.betsettler.domain.model.BetResult;
+import com.betsettler.model.BetResult;
 import com.betsettler.messaging.rocketmq.producer.BetSettlementProducer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.betsettler.domain.model.Bet;
-import com.betsettler.domain.model.EventOutcome;
+import com.betsettler.model.Bet;
+import com.betsettler.model.EventOutcome;
 import com.betsettler.repository.BetRepository;
 
 @Service

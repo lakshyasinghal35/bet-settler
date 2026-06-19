@@ -1,6 +1,6 @@
 package com.betsettler.messaging.rocketmq.producer;
 
-import com.betsettler.domain.model.Bet;
+import com.betsettler.model.Bet;
 
 public interface BetSettlementProducer {
 

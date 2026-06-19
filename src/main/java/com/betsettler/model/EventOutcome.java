@@ -1,4 +1,4 @@
-package com.betsettler.domain.model;
+package com.betsettler.model;
 
 import com.betsettler.dto.EventOutcomeRequest;
 import lombok.AllArgsConstructor;

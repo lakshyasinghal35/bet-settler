@@ -1,4 +1,4 @@
-package com.betsettler.domain.service;
+package com.betsettler.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.betsettler.dto.BetResponse;
 import com.betsettler.dto.CreateBetRequest;
-import com.betsettler.domain.model.Bet;
+import com.betsettler.model.Bet;
 import com.betsettler.repository.BetRepository;
 
 @Service

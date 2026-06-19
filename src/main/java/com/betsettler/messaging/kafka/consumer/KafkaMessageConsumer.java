@@ -1,7 +1,7 @@
 package com.betsettler.messaging.kafka.consumer;
 
-import com.betsettler.domain.model.EventOutcome;
-import com.betsettler.domain.service.EventOutcomeProcessingService;
+import com.betsettler.model.EventOutcome;
+import com.betsettler.service.EventOutcomeProcessingService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

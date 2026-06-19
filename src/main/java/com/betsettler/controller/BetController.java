@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.betsettler.dto.BetResponse;
 import com.betsettler.dto.CreateBetRequest;
-import com.betsettler.domain.service.BetService;
+import com.betsettler.service.BetService;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
