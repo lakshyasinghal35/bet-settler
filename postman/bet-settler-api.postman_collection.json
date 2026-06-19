@@ -1,0 +1,127 @@
+{
+  "info": {
+    "_postman_id": "bet-settler-api",
+    "name": "Bet Settler API",
+    "description": "REST API for bet-settler — create bets (batch), query bets by event, and publish event outcomes to Kafka.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "eventId",
+      "value": "Match 1",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Bets",
+      "item": [
+        {
+          "name": "Create Bets",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"betId\": \"bet-001\",\n    \"userId\": \"user-1\",\n    \"eventId\": \"Match 1\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-a\",\n    \"betAmount\": 100.00\n  },\n  {\n    \"betId\": \"bet-002\",\n    \"userId\": \"user-2\",\n    \"eventId\": \"Match 1\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-b\",\n    \"betAmount\": 50.00\n  },\n  {\n    \"betId\": \"bet-003\",\n    \"userId\": \"user-3\",\n    \"eventId\": \"Match 1\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-x\",\n    \"betAmount\": 25.00\n  },\n  {\n    \"betId\": \"bet-004\",\n    \"userId\": \"user-1\",\n    \"eventId\": \"Match 2\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-b\",\n    \"betAmount\": 100.00\n  },\n  {\n    \"betId\": \"bet-005\",\n    \"userId\": \"user-2\",\n    \"eventId\": \"Match 2\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-x\",\n    \"betAmount\": 50.00\n  },\n  {\n    \"betId\": \"bet-006\",\n    \"userId\": \"user-3\",\n    \"eventId\": \"Match 2\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-x\",\n    \"betAmount\": 25.00\n  },\n  {\n    \"betId\": \"bet-007\",\n    \"userId\": \"user-1\",\n    \"eventId\": \"Match 3\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-a\",\n    \"betAmount\": 100.00\n  },\n  {\n    \"betId\": \"bet-008\",\n    \"userId\": \"user-2\",\n    \"eventId\": \"Match 3\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-a\",\n    \"betAmount\": 50.00\n  },\n  {\n    \"betId\": \"bet-009\",\n    \"userId\": \"user-3\",\n    \"eventId\": \"Match 3\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-x\",\n    \"betAmount\": 25.00\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bets",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bets"
+              ]
+            },
+            "description": "Creates one or more bets. Request body must be a JSON array of bet objects.\n\nResponses:\n- 201 Created — all bets saved; body is the created bets\n- 207 Multi-Status — some bets saved; body contains only successful bets\n- 400 Bad Request — no bets saved, or empty array\n\nDuplicate betId values overwrite existing bets in Redis."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Bets by Event ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bets?eventId={{eventId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bets"
+              ],
+              "query": [
+                {
+                  "key": "eventId",
+                  "value": "{{eventId}}",
+                  "description": "Required. Event ID to filter bets."
+                }
+              ]
+            },
+            "description": "Returns all bets for the given event ID. Returns 200 OK with a JSON array of bets."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Event Outcomes",
+      "item": [
+        {
+          "name": "Publish Event Outcome",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"eventId\": \"evt-123\",\n  \"eventName\": \"Team A vs Team B\",\n  \"eventWinnerId\": \"team-a\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/event-outcomes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "event-outcomes"
+              ]
+            },
+            "description": "Publishes an event outcome to Kafka for downstream bet settlement. Returns 202 Accepted."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

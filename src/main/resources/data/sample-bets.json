@@ -1,0 +1,76 @@
+[
+  {
+    "betId": "bet-001",
+    "userId": "user-1",
+    "eventId": "Match 1",
+    "eventMarketId": "market-winner",
+    "eventWinnerId": "team-a",
+    "betAmount": 100.00
+  },
+  {
+    "betId": "bet-002",
+    "userId": "user-2",
+    "eventId": "Match 1",
+    "eventMarketId": "market-winner",
+    "eventWinnerId": "team-b",
+    "betAmount": 50.00
+  },
+  {
+    "betId": "bet-003",
+    "userId": "user-3",
+    "eventId": "Match 1",
+    "eventMarketId": "market-winner",
+    "eventWinnerId": "team-x",
+    "betAmount": 25.00
+  },
+
+  {
+    "betId": "bet-004",
+    "userId": "user-1",
+    "eventId": "Match 2",
+    "eventMarketId": "market-winner",
+    "eventWinnerId": "team-b",
+    "betAmount": 100.00
+  },
+  {
+    "betId": "bet-005",
+    "userId": "user-2",
+    "eventId": "Match 2",
+    "eventMarketId": "market-winner",
+    "eventWinnerId": "team-x",
+    "betAmount": 50.00
+  },
+  {
+    "betId": "bet-006",
+    "userId": "user-3",
+    "eventId": "Match 2",
+    "eventMarketId": "market-winner",
+    "eventWinnerId": "team-x",
+    "betAmount": 25.00
+  },
+
+  {
+      "betId": "bet-007",
+      "userId": "user-1",
+      "eventId": "Match 3",
+      "eventMarketId": "market-winner",
+      "eventWinnerId": "team-a",
+      "betAmount": 100.00
+  },
+  {
+      "betId": "bet-008",
+      "userId": "user-2",
+      "eventId": "Match 3",
+      "eventMarketId": "market-winner",
+      "eventWinnerId": "team-a",
+      "betAmount": 50.00
+  },
+  {
+      "betId": "bet-009",
+      "userId": "user-3",
+      "eventId": "Match 3",
+      "eventMarketId": "market-winner",
+      "eventWinnerId": "team-x",
+      "betAmount": 25.00
+  }
+]
