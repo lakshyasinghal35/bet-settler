@@ -13,7 +13,7 @@
     },
     {
       "key": "eventId",
-      "value": "evt-123",
+      "value": "Match 1",
       "type": "string"
     }
   ],
@@ -33,7 +33,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "[\n  {\n    \"betId\": \"bet-001\",\n    \"userId\": \"user-1\",\n    \"eventId\": \"{{eventId}}\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-a\",\n    \"betAmount\": 100.00\n  },\n  {\n    \"betId\": \"bet-002\",\n    \"userId\": \"user-2\",\n    \"eventId\": \"{{eventId}}\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-b\",\n    \"betAmount\": 50.00\n  }\n]",
+              "raw": "[\n  {\n    \"betId\": \"bet-001\",\n    \"userId\": \"user-1\",\n    \"eventId\": \"Match 1\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-a\",\n    \"betAmount\": 100.00\n  },\n  {\n    \"betId\": \"bet-002\",\n    \"userId\": \"user-2\",\n    \"eventId\": \"Match 1\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-b\",\n    \"betAmount\": 50.00\n  },\n  {\n    \"betId\": \"bet-003\",\n    \"userId\": \"user-3\",\n    \"eventId\": \"Match 1\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-x\",\n    \"betAmount\": 25.00\n  },\n  {\n    \"betId\": \"bet-004\",\n    \"userId\": \"user-1\",\n    \"eventId\": \"Match 2\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-b\",\n    \"betAmount\": 100.00\n  },\n  {\n    \"betId\": \"bet-005\",\n    \"userId\": \"user-2\",\n    \"eventId\": \"Match 2\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-x\",\n    \"betAmount\": 50.00\n  },\n  {\n    \"betId\": \"bet-006\",\n    \"userId\": \"user-3\",\n    \"eventId\": \"Match 2\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-x\",\n    \"betAmount\": 25.00\n  },\n  {\n    \"betId\": \"bet-007\",\n    \"userId\": \"user-1\",\n    \"eventId\": \"Match 3\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-a\",\n    \"betAmount\": 100.00\n  },\n  {\n    \"betId\": \"bet-008\",\n    \"userId\": \"user-2\",\n    \"eventId\": \"Match 3\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-a\",\n    \"betAmount\": 50.00\n  },\n  {\n    \"betId\": \"bet-009\",\n    \"userId\": \"user-3\",\n    \"eventId\": \"Match 3\",\n    \"eventMarketId\": \"market-winner\",\n    \"eventWinnerId\": \"team-x\",\n    \"betAmount\": 25.00\n  }\n]",
               "options": {
                 "raw": {
                   "language": "json"
