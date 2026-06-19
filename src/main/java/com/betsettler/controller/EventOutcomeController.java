@@ -1,4 +1,4 @@
-package com.betsettler.api.controller;
+package com.betsettler.controller;
 
 import com.betsettler.domain.service.EventOutcomePublishingService;
 import org.springframework.http.HttpStatus;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.betsettler.api.dto.EventOutcomeRequest;
-import com.betsettler.api.dto.EventOutcomeResponse;
+import com.betsettler.dto.EventOutcomeRequest;
+import com.betsettler.dto.EventOutcomeResponse;
 import com.betsettler.domain.model.EventOutcome;
 
 import jakarta.validation.Valid;

@@ -1,4 +1,4 @@
-package com.betsettler.api.dto;
+package com.betsettler.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;

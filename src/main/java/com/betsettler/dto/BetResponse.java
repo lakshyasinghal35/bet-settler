@@ -1,4 +1,4 @@
-package com.betsettler.api.dto;
+package com.betsettler.dto;
 
 import java.math.BigDecimal;
 

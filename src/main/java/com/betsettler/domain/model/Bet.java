@@ -2,7 +2,7 @@ package com.betsettler.domain.model;
 
 import java.math.BigDecimal;
 
-import com.betsettler.api.dto.CreateBetRequest;
+import com.betsettler.dto.CreateBetRequest;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

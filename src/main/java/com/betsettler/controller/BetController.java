@@ -1,4 +1,4 @@
-package com.betsettler.api.controller;
+package com.betsettler.controller;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.betsettler.api.dto.BetResponse;
-import com.betsettler.api.dto.CreateBetRequest;
+import com.betsettler.dto.BetResponse;
+import com.betsettler.dto.CreateBetRequest;
 import com.betsettler.domain.service.BetService;
 
 import jakarta.validation.Valid;

@@ -8,8 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.betsettler.api.dto.BetResponse;
-import com.betsettler.api.dto.CreateBetRequest;
+import com.betsettler.dto.BetResponse;
+import com.betsettler.dto.CreateBetRequest;
 import com.betsettler.domain.model.Bet;
 import com.betsettler.repository.BetRepository;
 

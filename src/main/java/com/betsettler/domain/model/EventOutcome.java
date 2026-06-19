@@ -1,6 +1,6 @@
 package com.betsettler.domain.model;
 
-import com.betsettler.api.dto.EventOutcomeRequest;
+import com.betsettler.dto.EventOutcomeRequest;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
